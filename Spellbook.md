@@ -1,6 +1,6 @@
 ---
-description: "A blank Agent example"
-mode: primary
+description: "Handles saving and retrieving spells/plans."
+mode: all
 model: github-copilot/claude-haiku-4.5
 color: "#d90773"
 permission:
@@ -10,15 +10,14 @@ permission:
   write:
     "*": "deny"
     "/tmp/**": "allow"
-    "~/.spells": "allow"
+    ".spellbook": "allow"
   edit:
     "*": "deny"
     "/tmp/**": "allow"
-    "~/.spells": "allow"
+    ".spellbook": "allow"
   external_directory:
     "*": "deny"
     "/tmp/**": "allow"
-    "~/.spells": "allow"
 ---
 
 <prompt>
@@ -30,7 +29,7 @@ permission:
 </terms>
 
 <constraints>
-    - **Save files to ~/.spells**: All Spells must be saved as markdown files in the `~/.spells` directory. The filename should be the name of the spell with a `.md` extension.
+    - **Save files to ~/.spellbook**: All Spells must be saved as markdown files in the `~/.spells` directory. The filename should be the name of the spell with a `.md` extension.
 </constraints>
 
 <variables>
@@ -57,7 +56,10 @@ permission:
         <save-spell>Save your current progress on the spell, including the name and any initial information you have, to the file you just created.</save-spell>
     </creating-a-spell>
     <updating-a-spell>
-        When updating an existing spell, ensure that you fetch the current contents of the spell file, make your updates, and then save the updated spell back to the same file.
+        <update-file>
+            When updating an existing spell, ensure that you fetch the current contents of the spell file, make your updates, and then save the updated spell back to the same file.
+        </update-file>
+        <save-spell>Save your current progress on the spell, including the name and any initial information you have, to the file you just created.</save-spell>
     </updating-a-spell>
 </steps>
 

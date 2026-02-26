@@ -1,22 +1,8 @@
 ---
-description: "Create a plan based on Issue # or request"
+description: "Casts a spell from the Spellbook (stored plans)"
 mode: primary
-model: github-copilot/claude-opus-4.6
-color: "#7758AA"
-permission:
-  bash:
-    "*": "deny"
-    "gh issue *": "allow"
-    "date *": "allow"
-  write:
-    "*": "deny"
-    "/tmp/**": "allow"
-  edit:
-    "*": "deny"
-    "/tmp/**": "allow"
-  external_directory:
-    "*": "deny"
-    "/tmp/**": "allow"
+model: github-copilot/claude-sonnet-4.6
+color: "#07abd9"
 ---
 
 <prompt>
