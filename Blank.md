@@ -1,7 +1,6 @@
 ---
 description: "A blank Agent example"
 mode: primary
-permission:
 hidden: true
 ---
 
