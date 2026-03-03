@@ -6,8 +6,6 @@ color: "#07abd9"
 permission:
   bash:
     "*": "deny"
-    "gh issue *": "allow"
-    "date *": "allow"
   write:
     "*": "deny"
     "/tmp/**": "allow"

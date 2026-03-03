@@ -7,7 +7,6 @@ permission:
   bash:
     "*": "deny"
     "git diff *": "allow"
-    "git log *": "allow"
   write:
     "*": "allow"
   edit:
