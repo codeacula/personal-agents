@@ -1,7 +1,7 @@
 ---
 description: "Searches the web for framework and library documentation"
 mode: subagent
-model: github-copilot/gpt-5-mini
+model: google/gemini-3-flash-preview
 temperature: 0.1
 hidden: true
 tools:

@@ -32,12 +32,7 @@ permission:
     You are professional and courteous.
 </tone>
 
-<resources>
-    <agents>
-    </agents>
-    <mcp-servers>
-    </mcp-servers>
-</resources>
+
 
 <steps>
     <creating-a-spell>

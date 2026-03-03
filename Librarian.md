@@ -54,7 +54,7 @@ tools:
     </dispatch-seeker-orbs>
 
     <dispatch-lore-orb>
-        - Identify libraries, frameworks, or external tools relevant to the topic (from import statements, dependency files, or the topic itself).
+        - Identify libraries, frameworks, or external tools relevant to the topic (from dependency file names in the candidate list, SeekerOrb findings, or the topic itself).
         - Dispatch a LoreOrb with the topic and the library list.
     </dispatch-lore-orb>
 
