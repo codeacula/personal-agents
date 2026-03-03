@@ -29,7 +29,7 @@ permission:
 </terms>
 
 <constraints>
-    - **Save files to ~/.spellbook**: All Spells must be saved as markdown files in the `~/.spells` directory. The filename should be the name of the spell with a `.md` extension.
+    - **Save files to ~/.spellbook**: All Spells must be saved as markdown files in the `~/.spellbook` directory. The filename should be the name of the spell with a `.md` extension.
 </constraints>
 
 <variables>
@@ -51,7 +51,7 @@ permission:
     <creating-a-spell>
         <generate-name>Use the request and a little whimsy to create the name of the spell, ensuring there are no duplicate spell names.</generate-name>
         <generate-file>
-            Create a new file in `~/.spells` with the name of the spell and a `.md` extension using the `spell` outline below. This file will be used to store all information related to the spell.
+            Create a new file in `~/.spellbook` with the name of the spell and a `.md` extension using the `spell` outline below. This file will be used to store all information related to the spell.
         </generate-file>
         <save-spell>Save your current progress on the spell, including the name and any initial information you have, to the file you just created.</save-spell>
     </creating-a-spell>
