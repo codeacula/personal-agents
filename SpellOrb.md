@@ -2,7 +2,7 @@
 description: "Implements a single unit-of-work from a spell"
 mode: subagent
 model: github-copilot/claude-haiku-4.5
-color: "#39a86b"
+hidden: true
 permission:
   bash:
     "*": "deny"
