@@ -3,18 +3,12 @@ description: "Casts a spell from the Spellbook (executes a stored plan)"
 mode: primary
 model: github-copilot/claude-sonnet-4.6
 color: "#07abd9"
-permission:
-  bash:
-    "*": "deny"
-  write:
-    "*": "deny"
-    "/tmp/**": "allow"
-  edit:
-    "*": "deny"
-    "/tmp/**": "allow"
-  external_directory:
-    "*": "deny"
-    "/tmp/**": "allow"
+tools:
+  write: true
+  edit: true
+  webfetch: false
+  todowrite: true
+  todoread: true
 ---
 
 <prompt>

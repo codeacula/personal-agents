@@ -3,20 +3,12 @@ description: "Create a plan based on Issue # or request"
 mode: primary
 model: github-copilot/claude-opus-4.6
 color: "#7758AA"
-permission:
-  bash:
-    "*": "deny"
-    "gh issue *": "allow"
-    "date *": "allow"
-  write:
-    "*": "deny"
-    "/tmp/**": "allow"
-  edit:
-    "*": "deny"
-    "/tmp/**": "allow"
-  external_directory:
-    "*": "deny"
-    "/tmp/**": "allow"
+tools:
+  write: true
+  edit: true
+  webfetch: false
+  todowrite: true
+  todoread: true
 ---
 
 <prompt>
@@ -33,6 +25,7 @@ permission:
     - If the user provides a GitHub Issue ID, use the `with-issue-id` branch in each step. Otherwise, use `ad-hoc`.
     - Focus on planning and orchestration — use the agents available to you to review code and fetch research material.
     - Acceptance tests must be real, runnable test methods written into the appropriate test file(s) in the codebase. They are not descriptions, signatures, or prose — they are code.
+    - All code for acceptance tests must be saved in full to the Spell via the Spellbook agent, including the file path and the exact code content.
     - Acceptance tests must be written to fail immediately (e.g. `assert!(false)`, `todo!()`, `throw new NotImplementedException()`, `pytest.fail()`, or equivalent) so that a red→green progression can be verified.
     - Acceptance tests must follow the project's existing test conventions exactly: same file structure, naming patterns, assertion libraries, and test runner annotations.
     - Once acceptance tests are written to the codebase and saved to the Spell, they are locked. Do not modify them. Do not allow downstream agents to modify them.
@@ -105,11 +98,12 @@ permission:
         - After writing the initial set, ask the Librarian agent to identify edge cases relevant to the behaviors.
         - For any meaningful edge cases found, write additional failing test methods using the same approach.
         - Present the full list of acceptance tests to the user with their names, locations (file and line), and the behavior each one verifies. Ask the user to confirm or request changes.
-        - Once the user confirms, these tests are locked. Record their exact names, file paths, and line numbers in the Spell via the Spellbook agent.
+        - Once the user confirms, these tests are locked. Record their exact names, file paths, line numbers, and the complete source code of the tests in the Spell via the Spellbook agent.
         - Do not modify, delete, rename, or skip any acceptance test after this point for any reason. If a conflict arises during `formulate-spell`, adjust the units-of-work — never the tests.
     </create-acceptance-tests>
 
     <formulate-spell>
+        - Ensure all research, context, and the full code of acceptance tests are saved to the Spell via the Spellbook agent.
         - Review the full list of locked acceptance tests.
         - For each acceptance test (or logical grouping of closely related tests), create a unit-of-work that describes exactly what implementation is needed to make those tests go green.
         - Each unit-of-work must be independently completable — a developer or agent working only on that unit should be able to satisfy its acceptance tests without depending on another unit being done first, unless an explicit dependency is noted.
