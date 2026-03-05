@@ -7,12 +7,9 @@ hidden: true
 permission:
   bash:
     "*": "deny"
-  write:
-    "*": "deny"
-    "/tmp/**": "allow"
-  edit:
-    "*": "deny"
-    "/tmp/**": "allow"
+  write: "deny"
+  edit: "deny"
+  task: "allow"
 ---
 
 <prompt>

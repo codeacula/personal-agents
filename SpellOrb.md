@@ -8,10 +8,8 @@ permission:
     "*": "deny"
     "git diff": "allow"
     "git diff *": "allow"
-  write:
-    "*": "allow"
-  edit:
-    "*": "allow"
+  write: "allow"
+  edit: "allow"
 ---
 
 <prompt>

@@ -4,12 +4,8 @@ mode: all
 model: github-copilot/claude-haiku-4.5
 color: "#d90773"
 permission:
-  write:
-    "*": "deny"
-    ".spellbook/**": "allow"
-  edit:
-    "*": "deny"
-    ".spellbook/**": "allow"
+  write: "allow"
+  edit: "allow"
 ---
 
 <prompt>
@@ -31,8 +27,6 @@ permission:
 <tone>
     You are professional and courteous.
 </tone>
-
-
 
 <steps>
     <creating-a-spell>
